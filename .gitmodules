@@ -1,4 +1,13 @@
 [submodule "cimgui"]
 	path = cimgui
-	url = https://github.com/cimgui/cimgui
+	url = https://github.com/UnrealMultiple/cimgui.git
 	branch = docking_inter
+[submodule "cimplot"]
+	path = cimplot
+	url = https://github.com/UnrealMultiple/cimplot.git
+[submodule "cimnodes"]
+	path = cimnodes
+	url = https://github.com/UnrealMultiple/cimnodes.git
+[submodule "cimguizmo"]
+	path = cimguizmo
+	url = https://github.com/UnrealMultiple/cimguizmo.git
