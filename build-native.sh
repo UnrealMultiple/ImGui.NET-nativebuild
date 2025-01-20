@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
 
 scriptPath="`dirname \"$0\"`"
-cimguiPaths=(
-    "$scriptPath/cimgui"
-    "$scriptPath/cimguizmo"
-    "$scriptPath/cimnodes"
-    "$scriptPath/cimplot"
-)
+# cimguiPaths=(
+#     "$scriptPath/cimgui"
+#     "$scriptPath/cimguizmo"
+#     "$scriptPath/cimnodes"
+#     "$scriptPath/cimplot"
+# )
 
 
 _CMakeBuildType=Debug
@@ -36,10 +36,16 @@ while :; do
     shift
 done
 
-for targetDir in "${cimguiPaths[@]}"; do
-    mkdir -p $targetDir/build/$_CMakeBuildType
-    pushd $targetDir/build/$_CMakeBuildType
-    cmake ../.. -DCMAKE_OSX_ARCHITECTURES="$_CMakeOsxArchitectures" -DCMAKE_OSX_DEPLOYMENT_TARGET=10.13 -DCMAKE_BUILD_TYPE=$_CMakeBuildType
-    make -j
-    popd
-done
+# for targetDir in "${cimguiPaths[@]}"; do
+#     mkdir -p $targetDir/build/$_CMakeBuildType
+#     pushd $targetDir/build/$_CMakeBuildType
+#     cmake ../.. -DCMAKE_OSX_ARCHITECTURES="$_CMakeOsxArchitectures" -DCMAKE_OSX_DEPLOYMENT_TARGET=10.13 -DCMAKE_BUILD_TYPE=$_CMakeBuildType
+#     make -j
+#     popd
+# done
+
+mkdir -p build/$_CMakeBuildType
+pushd build/$_CMakeBuildType
+cmake ../.. -DCMAKE_OSX_ARCHITECTURES="$_CMakeOsxArchitectures" -DCMAKE_OSX_DEPLOYMENT_TARGET=10.13 -DCMAKE_BUILD_TYPE=$_CMakeBuildType
+make -j
+popd
